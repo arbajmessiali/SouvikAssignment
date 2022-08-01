@@ -11,7 +11,7 @@ public class Administrator extends Employee {
 	
 	@Override
 	void calculateSalary() {
-		System.out.println("Administrator calculateSalary is: "+(this.basicSalary+numberOfLocalTravels+hra));
+		System.out.println("Administrator calculateSalary is: "+(this.getBasicSalary()+numberOfLocalTravels+hra));
 	}
 
 }

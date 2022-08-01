@@ -12,7 +12,7 @@ public class Supervisor extends Employee {
 
 	@Override
 	void calculateSalary() {
-		System.out.println("Supervisor calculateSalary is:" + (this.basicSalary + dearnessAllowance + targetAchievedAmount ));
+		System.out.println("Supervisor calculateSalary is:" + (this.getBasicSalary() + dearnessAllowance + targetAchievedAmount ));
 		
 	}
 

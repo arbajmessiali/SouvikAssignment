@@ -16,7 +16,7 @@ public class DesignEngineer extends Employee {
 
 	@Override
 	void calculateSalary() {
-		System.out.println("DesignEngineer calculateSalary is: "+(this.basicSalary+completedProjectIncentive));
+		System.out.println("DesignEngineer calculateSalary is: "+(this.getBasicSalary()+completedProjectIncentive));
 	}
 
 }

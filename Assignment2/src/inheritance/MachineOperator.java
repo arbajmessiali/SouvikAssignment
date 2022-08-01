@@ -13,7 +13,7 @@ public class MachineOperator extends Employee {
 
 	@Override
 	void calculateSalary() {
-    System.out.println("MachineOperator caluculatedSalary is:"+(this.basicSalary+(overTimeHours*perHourOverTimeRate)));
+    System.out.println("MachineOperator caluculatedSalary is:"+(this.getBasicSalary()+(overTimeHours*perHourOverTimeRate)));
 		
 	}
 	
