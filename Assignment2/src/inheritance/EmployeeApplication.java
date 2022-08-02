@@ -142,17 +142,6 @@ public class EmployeeApplication {
 		}
 		System.out.println("Thank you for using our service.");
 		sc.close();
-		/*
-		Accountant acc = new Accountant(1, "Vasu", 5000.00f, 31);
-        acc.calculateSalary();
-        Supervisor sup = new Supervisor(2, "Ramu", 7000.00f, 29);
-        sup.calculateSalary();
-        MachineOperator mo = new MachineOperator(3,"sushma", 20000.00f, 25);
-        mo.calculateSalary();
-        DesignEngineer de = new DesignEngineer(4, "keerthi", 40000.00f, 30);
-        de.calculateSalary();
-        Administrator admin = new Administrator(5, "suresh", 50000.00f, 31);
-        admin.calculateSalary();	*/
 	}
 
 	private static void select() {
