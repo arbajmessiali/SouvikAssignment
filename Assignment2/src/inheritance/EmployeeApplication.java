@@ -27,6 +27,7 @@ public class EmployeeApplication {
 		System.out.println("4. Search for employee");
 		System.out.println("5. Update employee");
 		System.out.println("6. Remove Employee");
+		System.out.println("7. Exit");
 		int option = sc.nextInt();
 		return option;
 	}
@@ -249,15 +250,32 @@ public class EmployeeApplication {
 						System.out.println("Employee with Code: " + codeCheck + " not found!");
 				}
 				break;
-			default:
-				System.out.println("Wrong Input");	
-			}
-			System.out.println("Do you want to continue?");
-			String a = sc.next();
-			if(a.equalsIgnoreCase("no")||a.equalsIgnoreCase("n"))
-			{
+			case 6:
+				System.out.println("Enter code of employee to remove");
+				int codeCheck1 = sc.nextInt();
+				for (int i = 0; i < allEmp.size(); i++) {
+					if(codeCheck1 == allEmp.get(i).getCode())
+					{
+						allEmp.remove(i);
+						System.out.println("Employee removed");
+					}
+					else if(i==allEmp.size()-1 && codeCheck1!=allEmp.get(i).getCode())
+						System.out.println("Employee with Code: " + codeCheck1 + " not found!");
+				}
+				break;
+			case 7:
 				flag = false;
 				call = false;
+				System.out.println("Do you want to exit?");
+				String a = sc.next();
+				if(a.equalsIgnoreCase("yes")||a.equalsIgnoreCase("y"))
+				{
+					flag = false;
+					call = false;
+				}
+				break;
+			default:
+				System.out.println("Wrong Input");	
 			}
 		}
 	}
