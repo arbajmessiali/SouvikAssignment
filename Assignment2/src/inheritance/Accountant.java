@@ -10,6 +10,5 @@ static final int travellingAllowance = 500;
 @Override
 public void calculateSalary() {
 	System.out.println("Accountant calculateSalary is:" + (this.getBasicSalary() + travellingAllowance));
-	
 }
 }

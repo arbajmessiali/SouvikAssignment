@@ -30,8 +30,7 @@ public class EmployeeApplication {
 		System.out.println("Enter code: ");
 		code = sc.nextInt();
 		System.out.println("Enter name: ");
-		name = sc.nextLine();
-		sc.nextLine();
+		name = sc.next();
 		System.out.println("Enter basic salary: ");
 		basicSalary = sc.nextInt();
 		System.out.println("Enter attended days: ");
@@ -62,16 +61,19 @@ public class EmployeeApplication {
 					sup.calculateSalary();
 			        break;
 				case 3:
+					enterDetails();
 			        MachineOperator mo = new MachineOperator(code, name, basicSalary, attendedDays);
 			        mo.calculateSalary();
 			        allEmp.add(mo);
 			        break;
 				case 4:
+					enterDetails();
 			        DesignEngineer de = new DesignEngineer(code, name, basicSalary, attendedDays);
 			        de.calculateSalary();
 			        allEmp.add(de);
 			        break;
 				case 5:
+					enterDetails();
 			        Administrator admin = new Administrator(code, name, basicSalary, attendedDays);
 			        admin.calculateSalary();
 			        allEmp.add(admin);
