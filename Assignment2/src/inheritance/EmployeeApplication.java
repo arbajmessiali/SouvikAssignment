@@ -61,10 +61,15 @@ public class EmployeeApplication {
 					break;
 				case 2:
 					enterDetails();
+					boolean targetCheck = true;
+					System.out.println("Is the target achieved?");
+					String target = sc.next();
+					if(target.equalsIgnoreCase("no")||target.equalsIgnoreCase("n"))
+						targetCheck = false;
 					Supervisor sup = new Supervisor(code, name, basicSalary, attendedDays);
 			        allEmp.add(sup);
+			        calcSalary[count] = sup.calculatedSalary(targetCheck);
 					sup.calculateSalary();
-					calcSalary[count] = sup.calculatedSalary();
 					count++;
 			        break;
 				case 3:
