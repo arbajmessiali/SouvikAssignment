@@ -85,9 +85,26 @@ public class EmployeeApplication {
 				case 4:
 					enterDetails();
 			        DesignEngineer de = new DesignEngineer(code, name, basicSalary, attendedDays);
-			        de.calculateSalary();
 			        allEmp.add(de);
-			        calcSalary[count] = de.calculatedSalary();
+			        ArrayList<String> projects = new ArrayList<String>();
+			        System.out.println("Have completed any project?");
+			        String projectCheck = sc.next();
+			        if(projectCheck.equalsIgnoreCase("yes")||projectCheck.equalsIgnoreCase("y"))
+			        {
+			        	boolean proCheck = true;
+			        	while(proCheck)
+			        	{
+			        		System.out.println("Enter name of project: ");
+			        		String projectName = sc.next();
+			        		projects.add(projectName);
+			        		System.out.println("Do you want to add more project?");
+			        		String check = sc.next();
+			        		if(check.equalsIgnoreCase("no")||check.equalsIgnoreCase("n"))
+			        			proCheck = false;
+			        	}
+			        }
+			        calcSalary[count] = de.calculatedSalary(projects);
+			        de.calculateSalary();
 					count++;
 			        break;
 				case 5:

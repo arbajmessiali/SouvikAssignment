@@ -9,6 +9,8 @@ public class DesignEngineer extends Employee {
 		// TODO Auto-generated constructor stub
 	}
 	
+	float salary;
+	
     static final int completedProjectIncentive = 10000;
 	ArrayList<String> projectsCompletedDuringMonth = new ArrayList<String>();
 	
@@ -16,10 +18,12 @@ public class DesignEngineer extends Employee {
 
 	@Override
 	void calculateSalary() {
-		System.out.println("DesignEngineer calculateSalary is: "+(this.getBasicSalary()+completedProjectIncentive));
+		System.out.println("DesignEngineer calculateSalary is: "+ salary);
 	}
 	
-	public float calculatedSalary() {
-		return (this.getBasicSalary() + completedProjectIncentive);
+	public float calculatedSalary(ArrayList<String> projects) {
+		projectsCompletedDuringMonth = projects;
+		salary = (this.getBasicSalary()+(projectsCompletedDuringMonth.size()*completedProjectIncentive));
+		return salary;
 	}
 }
