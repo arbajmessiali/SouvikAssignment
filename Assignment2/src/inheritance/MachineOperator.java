@@ -6,19 +6,21 @@ public class MachineOperator extends Employee {
 		super(code, name, basicSalary, attendedDays);
 	}
 	
-	float overTimeHours = 2.00f;
+	float overTimeHours;
 	String skill;
 	static int perHourOverTimeRate = 100;
-	
+	float salary = 0;
 
 	@Override
 	void calculateSalary() {
-    System.out.println("MachineOperator caluculatedSalary is:"+(this.getBasicSalary()+(overTimeHours*perHourOverTimeRate)));
+    System.out.println("MachineOperator caluculatedSalary is:"+salary);
 		
 	}
 	
-	public float calculatedSalary() {
-		return (this.getBasicSalary() + (overTimeHours*perHourOverTimeRate));
+	public float calculatedSalary(int overTime) {
+		overTimeHours = overTime;
+		salary = (this.getBasicSalary() + (overTimeHours*perHourOverTimeRate));
+		return salary;
 	}
 	
 

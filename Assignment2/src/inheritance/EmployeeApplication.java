@@ -74,10 +74,12 @@ public class EmployeeApplication {
 			        break;
 				case 3:
 					enterDetails();
+					System.out.println("How many hours overworked?");
+					int overWork = sc.nextInt();
 			        MachineOperator mo = new MachineOperator(code, name, basicSalary, attendedDays);
-			        mo.calculateSalary();
 			        allEmp.add(mo);
-			        calcSalary[count] = mo.calculatedSalary();
+			        calcSalary[count] = mo.calculatedSalary(overWork);
+			        mo.calculateSalary();
 					count++;
 			        break;
 				case 4:
