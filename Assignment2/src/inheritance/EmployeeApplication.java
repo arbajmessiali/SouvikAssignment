@@ -9,6 +9,8 @@ public class EmployeeApplication {
 	static Scanner sc;
 	
 	private static List<Employee> allEmp = new ArrayList<Employee>();
+	private static float[] calcSalary = new float[100];
+	static int count = 0;
 	
 	static boolean call = true;
 	private static int code;
@@ -21,6 +23,7 @@ public class EmployeeApplication {
 		System.out.println("Enter your choice of action: ");
 		System.out.println("1. Add Employee");
 		System.out.println("2. Display all employees");
+		System.out.println("3. Display individual salary details");
 		int option = sc.nextInt();
 		return option;
 	}
@@ -53,31 +56,41 @@ public class EmployeeApplication {
 					Accountant acc = new Accountant(code, name, basicSalary, attendedDays);
 					allEmp.add(acc);
 					acc.calculateSalary();
+					calcSalary[count] = acc.calculatedSalary();
+					count++;
 					break;
 				case 2:
 					enterDetails();
 					Supervisor sup = new Supervisor(code, name, basicSalary, attendedDays);
 			        allEmp.add(sup);
 					sup.calculateSalary();
+					calcSalary[count] = sup.calculatedSalary();
+					count++;
 			        break;
 				case 3:
 					enterDetails();
 			        MachineOperator mo = new MachineOperator(code, name, basicSalary, attendedDays);
 			        mo.calculateSalary();
 			        allEmp.add(mo);
+			        calcSalary[count] = mo.calculatedSalary();
+					count++;
 			        break;
 				case 4:
 					enterDetails();
 			        DesignEngineer de = new DesignEngineer(code, name, basicSalary, attendedDays);
 			        de.calculateSalary();
 			        allEmp.add(de);
+			        calcSalary[count] = de.calculatedSalary();
+					count++;
 			        break;
 				case 5:
 					enterDetails();
 			        Administrator admin = new Administrator(code, name, basicSalary, attendedDays);
 			        admin.calculateSalary();
 			        allEmp.add(admin);
-			        break;
+			        calcSalary[count] = admin.calculatedSalary();
+					count++;
+					break;
 			    default:
 			    	System.out.println("Wrong Input! Enter again.");
 			    
@@ -128,6 +141,14 @@ public class EmployeeApplication {
 				for (int i = 0; i < allEmp.size(); i++) {
 					System.out.println(allEmp.get(i).getCode() + "\t\t\t" + allEmp.get(i).getName() + "\t\t\t"
 							+ allEmp.get(i).getBasicSalary() + "\t\t\t" + allEmp.get(i).getAttendedDays());
+				}
+				break;
+			case 3:
+				System.out.println("Code" + "\t\t\t" + "Name" + "\t\t\t"
+						+ "Basic Salary" + "\t\t" + "Calculated Salary");
+				for (int i = 0; i < allEmp.size(); i++) {
+					System.out.println(allEmp.get(i).getCode() + "\t\t\t" + allEmp.get(i).getName() + "\t\t\t"
+							+ allEmp.get(i).getBasicSalary() + "\t\t\t" + calcSalary[i]);
 				}
 				break;
 			default:

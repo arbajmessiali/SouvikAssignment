@@ -18,5 +18,8 @@ public class DesignEngineer extends Employee {
 	void calculateSalary() {
 		System.out.println("DesignEngineer calculateSalary is: "+(this.getBasicSalary()+completedProjectIncentive));
 	}
-
+	
+	public float calculatedSalary() {
+		return (this.getBasicSalary() + completedProjectIncentive);
+	}
 }

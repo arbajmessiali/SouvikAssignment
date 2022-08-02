@@ -14,4 +14,7 @@ public class Administrator extends Employee {
 		System.out.println("Administrator calculateSalary is: "+(this.getBasicSalary()+numberOfLocalTravels+hra));
 	}
 
+	public float calculatedSalary() {
+		return (this.getBasicSalary() + numberOfLocalTravels+hra);
+	}
 }

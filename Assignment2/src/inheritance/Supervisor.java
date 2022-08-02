@@ -15,5 +15,9 @@ public class Supervisor extends Employee {
 		System.out.println("Supervisor calculateSalary is:" + (this.getBasicSalary() + dearnessAllowance + targetAchievedAmount ));
 		
 	}
+	
+	public float calculatedSalary() {
+		return (this.getBasicSalary() + dearnessAllowance + targetAchievedAmount);
+	}
 
 }

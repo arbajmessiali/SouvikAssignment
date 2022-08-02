@@ -11,4 +11,8 @@ static final int travellingAllowance = 500;
 public void calculateSalary() {
 	System.out.println("Accountant calculateSalary is:" + (this.getBasicSalary() + travellingAllowance));
 }
+
+public float calculatedSalary() {
+	return (this.getBasicSalary() + travellingAllowance);
+}
 }

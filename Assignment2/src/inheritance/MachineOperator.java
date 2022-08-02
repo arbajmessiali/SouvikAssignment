@@ -17,6 +17,9 @@ public class MachineOperator extends Employee {
 		
 	}
 	
+	public float calculatedSalary() {
+		return (this.getBasicSalary() + (overTimeHours*perHourOverTimeRate));
+	}
 	
 
 }
