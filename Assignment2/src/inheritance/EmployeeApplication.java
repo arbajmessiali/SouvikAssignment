@@ -110,9 +110,11 @@ public class EmployeeApplication {
 				case 5:
 					enterDetails();
 			        Administrator admin = new Administrator(code, name, basicSalary, attendedDays);
-			        admin.calculateSalary();
 			        allEmp.add(admin);
-			        calcSalary[count] = admin.calculatedSalary();
+			        System.out.println("How many travels done this month?");
+			        int noOfTravels = sc.nextInt();
+			        calcSalary[count] = admin.calculatedSalary(noOfTravels);
+			        admin.calculateSalary();
 					count++;
 					break;
 			    default:

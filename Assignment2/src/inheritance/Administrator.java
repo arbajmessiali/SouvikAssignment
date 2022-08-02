@@ -6,15 +6,18 @@ public class Administrator extends Employee {
 		super(code, name, basicSalary, attendedDays);
 	}
 	
-	int numberOfLocalTravels = 100;
+	float salary;
+	int numberOfLocalTravels;
 	static final int hra = 4000;
 	
 	@Override
 	void calculateSalary() {
-		System.out.println("Administrator calculateSalary is: "+(this.getBasicSalary()+numberOfLocalTravels+hra));
+		System.out.println("Administrator calculateSalary is: "+salary);
 	}
 
-	public float calculatedSalary() {
-		return (this.getBasicSalary() + numberOfLocalTravels+hra);
+	public float calculatedSalary(int noOfTravels) {
+		numberOfLocalTravels = noOfTravels;
+		salary = this.getBasicSalary() + (numberOfLocalTravels*100) +hra;
+		return salary;
 	}
 }
