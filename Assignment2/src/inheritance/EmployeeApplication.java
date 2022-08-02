@@ -24,6 +24,7 @@ public class EmployeeApplication {
 		System.out.println("1. Add Employee");
 		System.out.println("2. Display all employees");
 		System.out.println("3. Display individual salary details");
+		System.out.println("4. Search for employee");
 		int option = sc.nextInt();
 		return option;
 	}
@@ -175,6 +176,45 @@ public class EmployeeApplication {
 				for (int i = 0; i < allEmp.size(); i++) {
 					System.out.println(allEmp.get(i).getCode() + "\t\t\t" + allEmp.get(i).getName() + "\t\t\t"
 							+ allEmp.get(i).getBasicSalary() + "\t\t\t" + calcSalary[i]);
+				}
+				break;
+			case 4:
+				System.out.println("1. Search by Code");
+				System.out.println("2. Search by Name");
+				int option1 = sc.nextInt();
+				switch(option1) {
+				case 1:
+					System.out.println("Enter Code: ");
+					int codeCheck = sc.nextInt();
+					for (int i = 0; i < allEmp.size(); i++) {
+						if(codeCheck == allEmp.get(i).getCode())
+						{
+							System.out.println("Employee Found");
+							System.out.println(allEmp.get(i).getCode() + "\t\t\t" + allEmp.get(i).getName() + "\t\t\t"
+									+ allEmp.get(i).getBasicSalary() + "\t\t\t" + allEmp.get(i).getAttendedDays());
+							break;
+						}
+						else if(i==allEmp.size()-1 && codeCheck!=allEmp.get(i).getCode())
+							System.out.println("Not found!");
+					}
+					break;
+				case 2:
+					System.out.println("Enter Name: ");
+					String nameCheck = sc.next();
+					for (int i = 0; i < allEmp.size(); i++) {
+						if(nameCheck == allEmp.get(i).getName())
+						{
+							System.out.println("Employee Found");
+							System.out.println(allEmp.get(i).getCode() + "\t\t\t" + allEmp.get(i).getName() + "\t\t\t"
+								+ allEmp.get(i).getBasicSalary() + "\t\t\t" + allEmp.get(i).getAttendedDays());
+							break;
+						}
+						else if(i==allEmp.size()-1 && nameCheck!=allEmp.get(i).getName())
+							System.out.println("Not found!");
+					}
+					break;
+				default:
+					System.out.println("Wrong Input!");	
 				}
 				break;
 			default:
